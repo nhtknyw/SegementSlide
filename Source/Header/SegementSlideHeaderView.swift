@@ -40,23 +40,23 @@ internal class SegementSlideHeaderView: UIView {
         lastHeaderView = headerView
     }
     
-    internal override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let view = super.hitTest(point, with: event)
-        guard let segementSlideContentView = segementSlideContentView else {
-            return view
-        }
-        guard let selectedIndex = segementSlideContentView.selectedIndex,
-            let segementSlideContentScrollViewDelegate = segementSlideContentView.dequeueReusableViewController(at: selectedIndex)
-            else {
-            return view
-        }
-        if view is UIControl {
-            return view
-        }
-        if !(view?.gestureRecognizers?.isEmpty ?? true) {
-            return view
-        }
-        return segementSlideContentScrollViewDelegate.scrollView
-    }
+//     internal override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+//         let view = super.hitTest(point, with: event)
+//         guard let segementSlideContentView = segementSlideContentView else {
+//             return view
+//         }
+//         guard let selectedIndex = segementSlideContentView.selectedIndex,
+//             let segementSlideContentScrollViewDelegate = segementSlideContentView.dequeueReusableViewController(at: selectedIndex)
+//             else {
+//             return view
+//         }
+//         if view is UIControl {
+//             return view
+//         }
+//         if !(view?.gestureRecognizers?.isEmpty ?? true) {
+//             return view
+//         }
+//         return segementSlideContentScrollViewDelegate.scrollView
+//     }
     
 }
