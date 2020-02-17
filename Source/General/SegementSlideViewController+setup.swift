@@ -172,8 +172,10 @@ extension SegementSlideViewController {
             segementSlideContentView.trailingConstraint = segementSlideContentView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         }
         if segementSlideContentView.bottomConstraint == nil {
-            segementSlideContentView.bottomConstraint = segementSlideContentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            segementSlideContentView.bottomConstraint = segementSlideContentView.bottomAnchor.constraint(equalTo: segementSlideScrollView.bottomAnchor)
         }
+        
+        segementSlideContentView.heightConstraint = segementSlideContentView.heightAnchor.constraint(equalToConstant: contentViewHeight)
         
         segementSlideHeaderView.layer.zPosition = -3
         segementSlideContentView.layer.zPosition = -2
